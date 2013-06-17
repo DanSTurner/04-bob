@@ -1,34 +1,36 @@
 class Bob
-  loop do
-    input = gets.chomp
-    puts response_for(input)
-  end
 
-  def response_for(input)
-    if shouting?(input)
+
+  def self.response_for(input)
+    if self.shouting?(input)
       puts 'Woah, chill out!'
-    elsif question?(input)
+    elsif self.question?(input)
       puts 'Sure.'
-    elsif statement?(input)
+    elsif self.statement?(input)
       puts 'Whatever.'
     else
       puts 'Fine, be that way.'
     end
   end
 
-  def shouting?(input)
+  def self.shouting?(input)
   	!input.empty? && input == input.upcase
   end
 
-  def question?(input)
+  def self.question?(input)
   	!input.empty? && input[-1, 1] == "?"
   end
 
-  def statement?(input)
+  def self.statement?(input)
   	!input.empty?
   end
+#  loop do
+#    input = gets.chomp
+#    self.response_for(input)
+#  end
+
 
 end
 
-bob = Bob.new
-bob
+#bob = Bob.new
+#bob
